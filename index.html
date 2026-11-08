@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gukhwa — Motion Design Studio</title>
+  <meta name="description" content="Gukhwa(국화)는 브랜드의 결을 읽고 한 프레임씩 피워내는 모션그래픽 디자인 스튜디오입니다. 브랜드 필름, 키네틱 타이포그래피, 3D/CG, UI 모션." />
+  <meta property="og:title" content="Gukhwa — Motion that blooms." />
+  <meta property="og:description" content="브랜드가 움직이는 순간, 사람들은 멈춥니다. 모션그래픽 스튜디오 Gukhwa." />
+  <meta name="theme-color" content="#F3F1EC" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='%23E39B2F'%3E%3Cellipse cx='50' cy='22' rx='9' ry='22'/%3E%3Cellipse cx='50' cy='22' rx='9' ry='22' transform='rotate(45 50 50)'/%3E%3Cellipse cx='50' cy='22' rx='9' ry='22' transform='rotate(90 50 50)'/%3E%3Cellipse cx='50' cy='22' rx='9' ry='22' transform='rotate(135 50 50)'/%3E%3Cellipse cx='50' cy='22' rx='9' ry='22' transform='rotate(180 50 50)'/%3E%3Cellipse cx='50' cy='22' rx='9' ry='22' transform='rotate(225 50 50)'/%3E%3Cellipse cx='50' cy='22' rx='9' ry='22' transform='rotate(270 50 50)'/%3E%3Cellipse cx='50' cy='22' rx='9' ry='22' transform='rotate(315 50 50)'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='10' fill='%23111'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <!-- ============ LOADER ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <svg class="loader__bloom" viewBox="0 0 200 200">
+      <g class="petals"></g>
+      <circle cx="100" cy="100" r="9" fill="#0E0E0E" />
+    </svg>
+    <div class="loader__meta">
+      <span class="mono">Gukhwa Studio</span>
+      <span class="loader__count mono"><span id="loaderCount">000</span>%</span>
+    </div>
+    <div class="loader__curtain"></div>
+  </div>
+
+  <!-- ============ CURSOR + SPARKLES ============ -->
+  <canvas id="sparkles" aria-hidden="true"></canvas>
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__ring"><span class="cursor__label"></span></div>
+    <div class="cursor__dot"></div>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__logo" data-magnetic aria-label="Gukhwa home">
+      <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true"><g class="logo-petals"></g><circle cx="50" cy="50" r="9" /></svg>
+      <span>Gukhwa</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#work" class="roll"><span class="mono">01</span><span class="roll__t" data-text="Work">Work</span></a>
+      <a href="#about" class="roll"><span class="mono">02</span><span class="roll__t" data-text="Studio">Studio</span></a>
+      <a href="#services" class="roll"><span class="mono">03</span><span class="roll__t" data-text="Services">Services</span></a>
+      <a href="#visit" class="roll"><span class="mono">04</span><span class="roll__t" data-text="Visit">Visit</span></a>
+    </nav>
+    <div class="nav__right">
+      <span class="nav__time mono"><i class="dot-live"></i>Goyang <span id="clock">--:--</span></span>
+      <a href="#book" class="btn btn--ink btn--sm" data-magnetic><span>Book a call</span></a>
+      <button class="nav__burger" id="burger" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mmenu" id="mmenu">
+    <a href="#work">Work</a><a href="#about">Studio</a><a href="#services">Services</a><a href="#visit">Visit</a><a href="#book">Book a call</a>
+  </div>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <canvas class="hero__gl" id="heroGL" aria-hidden="true"></canvas>
+      <div class="hero__inner">
+        <div class="hero__top">
+          <p class="eyebrow mono reveal-up">( Motion Design Studio — Goyang, KR )</p>
+          <p class="eyebrow mono reveal-up hide-sm">Est. 2017 &nbsp;/&nbsp; Brand · Film · 3D · UI Motion</p>
+        </div>
+
+        <h1 class="hero__title" aria-label="Motion that blooms.">
+          <span class="line"><span class="split" data-split>Motion</span>
+            <span class="hero__pill" data-cursor="Play" data-reel-open>
+              <video src="videos/work-10.mp4" muted loop playsinline autoplay preload="auto"></video>
+            </span>
+          </span>
+          <span class="line line--indent"><span class="split" data-split>that</span> <em class="split serif-i" data-split>blooms.</em></span>
+        </h1>
+
+        <div class="hero__bottom">
+          <p class="hero__lead reveal-up">
+            브랜드가 움직이는 순간, 사람들은 멈춥니다.<br />
+            <strong>Gukhwa</strong>는 브랜드의 결을 읽고 한 프레임씩 피워내는<br class="hide-sm" /> 모션그래픽 디자인 스튜디오입니다.
+          </p>
+          <div class="hero__cta reveal-up">
+            <a href="#book" class="btn btn--ink" data-magnetic><span>프로젝트 상담 예약</span><i class="arr">→</i></a>
+            <button class="btn btn--ghost" data-magnetic data-reel-open><span><i class="play-ico"></i>Showreel 2026</span></button>
+          </div>
+          <div class="hero__badge reveal-up">
+            <span class="dot-live"></span>
+            <span><b>2027 Q1</b> 신규 프로젝트 <b>2자리</b> 남음</span>
+          </div>
+        </div>
+      </div>
+      <a href="#reel" class="hero__scroll mono" aria-label="Scroll"><span>Scroll</span><i></i></a>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <section class="marquee" aria-label="Capabilities">
+      <div class="marquee__track" id="marquee">
+        <div class="marquee__row">
+          <span>Brand Film</span><b>✺</b><span class="serif-i">Kinetic Typography</span><b>✺</b><span>3D / CG</span><b>✺</b><span class="serif-i">UI Motion</span><b>✺</b><span>Title Sequence</span><b>✺</b><span class="serif-i">Social Motion</span><b>✺</b>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SHOWREEL ============ -->
+    <section class="reel" id="reel">
+      <div class="reel__pin">
+        <div class="reel__frame" data-cursor="Play" data-reel-open>
+          <div class="reel__stack" id="reelStack"></div>
+          <div class="reel__overlay">
+            <span class="mono">Showreel — 2026</span>
+            <span class="mono reel__idx" id="reelIdx">01 / 06</span>
+          </div>
+          <div class="reel__title">
+            <span class="serif-i">Every frame,</span> <span>on purpose.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WORK ============ -->
+    <section class="work" id="work">
+      <div class="sec-head">
+        <p class="mono sec-head__num">(01)</p>
+        <h2 class="sec-head__title"><span class="split" data-split>Selected</span> <em class="serif-i split" data-split>Works</em> <sup class="mono">13</sup></h2>
+        <p class="sec-head__desc">브랜드 필름부터 3D 프로덕트, 인터페이스 모션까지.<br />마우스를 올리면 영상이 재생됩니다.</p>
+      </div>
+
+      <div class="work__bar">
+        <div class="filters" role="tablist" aria-label="작업 필터">
+          <button class="filter is-active" data-filter="all">All <sup>13</sup></button>
+          <button class="filter" data-filter="brand">Brand</button>
+          <button class="filter" data-filter="kinetic">Kinetic</button>
+          <button class="filter" data-filter="cg">3D · CG</button>
+          <button class="filter" data-filter="ui">Interface</button>
+          <button class="filter" data-filter="film">Film</button>
+        </div>
+        <div class="view-toggle" role="tablist" aria-label="보기 방식">
+          <button class="vt is-active" data-view="grid">Grid</button>
+          <button class="vt" data-view="index">Index</button>
+        </div>
+      </div>
+
+      <div class="grid" id="workGrid"><!-- filled by JS --></div>
+      <ol class="windex" id="workIndex" hidden><!-- filled by JS --></ol>
+      <div class="hover-preview" id="hoverPreview" aria-hidden="true"><video muted loop playsinline preload="none"></video></div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about" id="about">
+      <div class="sec-head">
+        <p class="mono sec-head__num">(02)</p>
+        <p class="mono">Studio</p>
+      </div>
+      <p class="about__statement" id="statement">
+        We don't decorate brands. We give them a <em class="serif-i">pulse</em> — a rhythm people remember long after the last frame fades.
+      </p>
+      <div class="about__grid">
+        <div class="about__kr">
+          <p>국화는 한 송이가 피기까지 오랜 시간이 걸리는 꽃입니다. 우리는 그 시간을 믿습니다. 브랜드의 언어와 톤, 리듬을 먼저 이해하고, 그 결에 맞는 움직임만을 설계합니다.</p>
+          <p>화려함보다 정확함, 유행보다 오래 남는 인상. 기획부터 스타일프레임, 애니메이션, 사운드 디렉션까지 모든 과정을 한 팀이 책임집니다.</p>
+          <a href="#book" class="link-u" data-magnetic>스튜디오와 이야기하기 →</a>
+        </div>
+        <ul class="stats">
+          <li><b data-count="9">0</b><sup>+</sup><span>Years in motion</span></li>
+          <li><b data-count="140">0</b><sup>+</sup><span>Projects delivered</span></li>
+          <li><b data-count="48">0</b><sup>h</sup><span>첫 스타일프레임 전달</span></li>
+          <li><b data-count="100">0</b><sup>%</sup><span>In-house production</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="services" id="services">
+      <div class="sec-head">
+        <p class="mono sec-head__num">(03)</p>
+        <h2 class="sec-head__title"><span class="split" data-split>What</span> <em class="serif-i split" data-split>we make</em></h2>
+        <p class="sec-head__desc">항목에 마우스를 올려 레퍼런스를 확인하세요.</p>
+      </div>
+      <ul class="svc" id="svcList">
+        <li class="svc__row" data-preview="videos/work-08.mp4#t=8"><span class="mono">01</span><h3>Brand Motion Identity</h3><p>로고 애니메이션, 모션 가이드라인, 브랜드 시스템의 움직임 설계</p><i class="svc__arr">↗</i></li>
+        <li class="svc__row" data-preview="videos/work-12.mp4#t=6"><span class="mono">02</span><h3>Campaign &amp; Launch Film</h3><p>런칭 필름, 티저, 광고 캠페인을 위한 하이엔드 영상</p><i class="svc__arr">↗</i></li>
+        <li class="svc__row" data-preview="videos/work-06.mp4#t=1"><span class="mono">03</span><h3>Kinetic Typography</h3><p>메시지를 리듬으로 전달하는 타이포그래피 모션</p><i class="svc__arr">↗</i></li>
+        <li class="svc__row" data-preview="videos/work-07.mp4#t=6"><span class="mono">04</span><h3>3D / CG Product</h3><p>제품 시각화, 머티리얼 룩개발, 3D 캐릭터 애니메이션</p><i class="svc__arr">↗</i></li>
+        <li class="svc__row" data-preview="videos/work-04.mp4#t=2"><span class="mono">05</span><h3>UI &amp; Interaction Motion</h3><p>앱·웹 인터랙션, 프로덕트 데모, 마이크로 모션</p><i class="svc__arr">↗</i></li>
+        <li class="svc__row" data-preview="videos/work-02.mp4#t=5"><span class="mono">06</span><h3>Social Motion Kit</h3><p>숏폼·SNS 채널을 위한 모션 템플릿과 시리즈 콘텐츠</p><i class="svc__arr">↗</i></li>
+      </ul>
+
+      <!-- Packages -->
+      <div class="pkgs">
+        <article class="pkg" data-tilt>
+          <p class="mono pkg__tag">Essential</p>
+          <h3>Social Motion Kit</h3>
+          <p class="pkg__price"><small>from</small> ₩1.8M</p>
+          <ul><li>15–30초 숏폼 3편</li><li>스타일프레임 2안</li><li>수정 2회</li><li>제작 기간 2주</li></ul>
+          <button class="btn btn--line" data-magnetic data-pick="Social Motion Kit"><span>이 구성으로 예약</span></button>
+        </article>
+        <article class="pkg pkg--hl" data-tilt>
+          <p class="mono pkg__tag">Signature <span class="pill">Most booked</span></p>
+          <h3>Brand Film</h3>
+          <p class="pkg__price"><small>from</small> ₩6.5M</p>
+          <ul><li>60–90초 메인 필름 + 컷다운 3종</li><li>컨셉 · 스토리보드 · 스타일프레임</li><li>사운드 디렉션 포함</li><li>제작 기간 4–6주</li></ul>
+          <button class="btn btn--ink" data-magnetic data-pick="Brand Film"><span>이 구성으로 예약</span><i class="arr">→</i></button>
+        </article>
+        <article class="pkg" data-tilt>
+          <p class="mono pkg__tag">Bespoke</p>
+          <h3>Full Motion Identity</h3>
+          <p class="pkg__price">Let's talk <small>별도 협의</small></p>
+          <ul><li>모션 아이덴티티 시스템 구축</li><li>3D / CG 에셋 + 가이드라인</li><li>캠페인 전 채널 운영</li><li>전담 디렉터 배정</li></ul>
+          <button class="btn btn--line" data-magnetic data-pick="Full Motion Identity"><span>이 구성으로 예약</span></button>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="process">
+      <div class="sec-head">
+        <p class="mono sec-head__num">(04)</p>
+        <h2 class="sec-head__title"><span class="split" data-split>How</span> <em class="serif-i split" data-split>it blooms</em></h2>
+      </div>
+      <div class="steps">
+        <svg class="steps__line" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 C 160 0, 340 40, 500 20 S 840 0, 1000 20" /></svg>
+        <div class="step"><span class="step__n mono">01 — Discover</span><h4>상담 &amp; 리서치</h4><p>브랜드, 타깃, 채널을 파악하고 목표 지표를 함께 정합니다.</p><span class="step__t mono">Day 1–3</span></div>
+        <div class="step"><span class="step__n mono">02 — Concept</span><h4>스토리보드 &amp; 스타일프레임</h4><p>48시간 안에 첫 스타일프레임. 방향을 눈으로 확인하고 결정하세요.</p><span class="step__t mono">Week 1</span></div>
+        <div class="step"><span class="step__n mono">03 — Animate</span><h4>제작 &amp; 피드백</h4><p>애니메이션, 3D, 사운드 작업. 공유 링크로 프레임 단위 피드백.</p><span class="step__t mono">Week 2–5</span></div>
+        <div class="step"><span class="step__n mono">04 — Deliver</span><h4>납품 &amp; 가이드</h4><p>채널별 마스터 파일과 모션 가이드를 함께 전달합니다.</p><span class="step__t mono">Final</span></div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="faq">
+      <div class="sec-head">
+        <p class="mono sec-head__num">(05)</p>
+        <h2 class="sec-head__title"><span class="split" data-split>Good</span> <em class="serif-i split" data-split>questions</em></h2>
+      </div>
+      <div class="faq__list">
+        <details><summary>제작 기간은 얼마나 걸리나요?<i></i></summary><p>숏폼 키트는 약 2주, 브랜드 필름은 4–6주가 일반적입니다. 런칭 일정이 정해져 있다면 상담 시 알려주세요. 역산해서 일정을 설계합니다.</p></details>
+        <details><summary>예산이 정해지지 않았는데 상담이 가능한가요?<i></i></summary><p>물론입니다. 목표와 채널을 들려주시면 예산 구간별로 가능한 구성을 제안드립니다. 첫 상담은 무료입니다.</p></details>
+        <details><summary>수정은 몇 번까지 가능한가요?<i></i></summary><p>패키지별로 기본 2회가 포함되어 있으며, 스타일프레임 단계에서 방향을 확정하기 때문에 큰 수정 없이 진행되는 경우가 대부분입니다.</p></details>
+        <details><summary>원본 파일과 저작권은 어떻게 되나요?<i></i></summary><p>최종 납품물의 사용권은 계약 범위 내에서 모두 클라이언트에게 귀속됩니다. 프로젝트 파일 제공은 계약 시 협의합니다.</p></details>
+        <details><summary>스튜디오 방문 상담도 가능한가요?<i></i></summary><p>네, 고양시 일산서구 스튜디오에서 예약제로 대면 상담을 진행합니다. 아래 예약에서 ‘스튜디오 방문 상담’을 선택하세요.</p></details>
+      </div>
+    </section>
+
+    <!-- ============ VISIT ============ -->
+    <section class="visit" id="visit">
+      <div class="sec-head">
+        <p class="mono sec-head__num">(06)</p>
+        <h2 class="sec-head__title"><span class="split" data-split>Find</span> <em class="serif-i split" data-split>the studio</em></h2>
+        <p class="sec-head__desc">찾아오는 길 — 모든 길은 스튜디오로 이어집니다.</p>
+      </div>
+
+      <div class="visit__wrap">
+        <div class="routes" id="routes">
+          <svg viewBox="0 0 640 400" class="routes__svg" aria-label="스튜디오 위치를 향해 이동하는 경로 일러스트">
+            <defs>
+              <pattern id="gridp" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="rgba(14,14,14,.06)" stroke-width="1" /></pattern>
+              <radialGradient id="pinGlow"><stop offset="0" stop-color="#E39B2F" stop-opacity=".45" /><stop offset="1" stop-color="#E39B2F" stop-opacity="0" /></radialGradient>
+            </defs>
+            <rect width="640" height="400" fill="url(#gridp)" />
+            <!-- abstract blocks -->
+            <g class="blocks">
+              <rect x="50" y="24" width="110" height="74" rx="10" /><rect x="228" y="20" width="76" height="92" rx="10" />
+              <rect x="525" y="52" width="95" height="56" rx="10" /><rect x="46" y="156" width="120" height="78" rx="10" />
+              <rect x="452" y="206" width="160" height="80" rx="10" /><rect x="236" y="292" width="104" height="82" rx="10" />
+            </g>
+            <path class="river" d="M-10 252 C 120 228, 200 270, 320 246 S 520 210, 650 236" />
+            <!-- streets -->
+            <g class="streets">
+              <path d="M0 130 H640" /><path d="M0 265 H640" /><path d="M210 0 V400" /><path d="M420 0 V400" /><path d="M0 390 L640 196" />
+            </g>
+            <text class="street-label" x="528" y="122">하이파크1로</text>
+            <text class="street-label" x="218" y="392" transform="rotate(-90 218 392)">91번길</text>
+
+            <!-- routes -->
+            <path id="r1" class="route route--a" d="M20 385 L210 330 L210 265 L340 265 L340 190 L420 190 L420 168" />
+            <path id="r2" class="route route--b" d="M620 20 L500 20 L500 130 L420 130 L420 168" />
+            <path id="r3" class="route route--c" d="M10 70 L120 130 L320 130 L320 168 L420 168" />
+            <path class="route-flow route--a" d="M20 385 L210 330 L210 265 L340 265 L340 190 L420 190 L420 168" />
+            <path class="route-flow route--b" d="M620 20 L500 20 L500 130 L420 130 L420 168" />
+            <path class="route-flow route--c" d="M10 70 L120 130 L320 130 L320 168 L420 168" />
+
+            <circle r="5" class="traveler t-a"><animateMotion dur="6s" repeatCount="indefinite" rotate="auto"><mpath href="#r1" /></animateMotion></circle>
+            <circle r="5" class="traveler t-b"><animateMotion dur="5s" begin="1s" repeatCount="indefinite"><mpath href="#r2" /></animateMotion></circle>
+            <circle r="5" class="traveler t-c"><animateMotion dur="5.5s" begin="2s" repeatCount="indefinite"><mpath href="#r3" /></animateMotion></circle>
+
+            <g class="origin"><circle cx="20" cy="385" r="5" /><text x="32" y="376">서울 방면</text></g>
+            <g class="origin"><circle cx="620" cy="20" r="5" /><text x="532" y="44">파주 방면</text></g>
+            <g class="origin"><circle cx="10" cy="70" r="5" /><text x="20" y="60">김포 방면</text></g>
+
+            <!-- pin -->
+            <g class="pin" transform="translate(420 168)">
+              <circle r="70" fill="url(#pinGlow)" />
+              <circle class="pulse" r="14" /><circle class="pulse pulse--2" r="14" />
+              <g class="pin__flower"></g>
+              <circle r="6" fill="#0E0E0E" />
+              <g class="pin__tag" transform="translate(18 -44)">
+                <rect width="118" height="34" rx="17" /><text x="16" y="22">Sweet99 · 1F</text>
+              </g>
+            </g>
+          </svg>
+          <p class="routes__cap mono">Illustrated route — 실제 위치는 오른쪽 지도를 확인하세요</p>
+        </div>
+
+        <div class="visit__info">
+          <div class="map-frame" data-cursor="Drag">
+            <iframe title="Gukhwa 스튜디오 위치 — Sweet99, 경기도 고양시 일산서구 하이파크1로91번길 8-11"
+              src="https://maps.google.com/maps?q=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EA%B3%A0%EC%96%91%EC%8B%9C%20%EC%9D%BC%EC%82%B0%EC%84%9C%EA%B5%AC%20%ED%95%98%EC%9D%B4%ED%8C%8C%ED%81%AC1%EB%A1%9C91%EB%B2%88%EA%B8%B8%208-11&hl=ko&z=17&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+          <div class="addr">
+            <p class="mono addr__k">Address</p>
+            <p class="addr__v"><b>Sweet99</b><br />경기도 고양시 일산서구<br />하이파크1로91번길 8-11, 1층</p>
+            <div class="addr__btns">
+              <button class="btn btn--line btn--sm" id="copyAddr" data-magnetic><span>주소 복사</span></button>
+              <a class="btn btn--line btn--sm" target="_blank" rel="noopener" data-magnetic href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EA%B3%A0%EC%96%91%EC%8B%9C%20%EC%9D%BC%EC%82%B0%EC%84%9C%EA%B5%AC%20%ED%95%98%EC%9D%B4%ED%8C%8C%ED%81%AC1%EB%A1%9C91%EB%B2%88%EA%B8%B8%208-11"><span>네이버 지도</span></a>
+              <a class="btn btn--line btn--sm" target="_blank" rel="noopener" data-magnetic href="https://map.kakao.com/?q=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EA%B3%A0%EC%96%91%EC%8B%9C%20%EC%9D%BC%EC%82%B0%EC%84%9C%EA%B5%AC%20%ED%95%98%EC%9D%B4%ED%8C%8C%ED%81%AC1%EB%A1%9C91%EB%B2%88%EA%B8%B8%208-11"><span>카카오맵</span></a>
+              <a class="btn btn--line btn--sm" target="_blank" rel="noopener" data-magnetic href="https://www.google.com/maps/search/?api=1&query=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EA%B3%A0%EC%96%91%EC%8B%9C%20%EC%9D%BC%EC%82%B0%EC%84%9C%EA%B5%AC%20%ED%95%98%EC%9D%B4%ED%8C%8C%ED%81%AC1%EB%A1%9C91%EB%B2%88%EA%B8%B8%208-11"><span>Google Maps</span></a>
+            </div>
+            <dl class="hours">
+              <div><dt class="mono">Mon – Fri</dt><dd>10:00 – 19:00</dd></div>
+              <div><dt class="mono">Sat</dt><dd>예약 상담만 진행</dd></div>
+              <div><dt class="mono">Sun</dt><dd>휴무</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BOOKING (CTA) ============ -->
+    <section class="book" id="book">
+      <div class="book__bg" aria-hidden="true"></div>
+      <div class="book__head">
+        <p class="mono">(07) — Booking</p>
+        <h2 class="book__title"><span class="split" data-split>Let's make</span><br /><span class="split" data-split>it</span> <em class="serif-i split" data-split>bloom.</em></h2>
+        <p class="book__lead">원하는 날짜와 시간을 고르세요. 30초면 예약 요청이 완료되고,<br class="hide-sm" /> 영업일 기준 24시간 안에 디렉터가 직접 연락드립니다.</p>
+      </div>
+
+      <form class="booking wiz" id="booking" novalidate>
+        <div class="wiz__head">
+          <ol class="wiz__steps" id="wizSteps">
+            <li class="is-active" data-s="1"><span class="mono">01</span>상담 방식</li>
+            <li data-s="2"><span class="mono">02</span>날짜 · 시간</li>
+            <li data-s="3"><span class="mono">03</span>연락처</li>
+          </ol>
+          <div class="wiz__bar"><i id="wizBar"></i></div>
+        </div>
+
+        <div class="wiz__body">
+          <fieldset class="wiz__step is-active" data-step="1">
+            <legend>어떤 방식으로 만날까요?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="type" value="온라인 화상 상담 (30분)" checked /><span><b>온라인 화상 상담</b><small>30분 · Google Meet</small></span></label>
+              <label class="choice"><input type="radio" name="type" value="스튜디오 방문 상담 (60분)" /><span><b>스튜디오 방문 상담</b><small>60분 · Sweet99 1층</small></span></label>
+              <label class="choice"><input type="radio" name="type" value="프로젝트 킥오프 (90분)" /><span><b>프로젝트 킥오프</b><small>90분 · 브리프 확정 시</small></span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="wiz__step" data-step="2">
+            <legend>날짜와 시간을 골라주세요</legend>
+            <div class="cal-wrap">
+              <div class="cal" id="cal">
+                <div class="cal__head">
+                  <button type="button" class="cal__nav" id="calPrev" aria-label="이전 달">←</button>
+                  <p class="cal__month" id="calMonth"></p>
+                  <button type="button" class="cal__nav" id="calNext" aria-label="다음 달">→</button>
+                </div>
+                <div class="cal__dow"><span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span></div>
+                <div class="cal__days" id="calDays"></div>
+              </div>
+              <div class="slots">
+                <p class="slots__label mono" id="slotsLabel">날짜를 먼저 선택하세요</p>
+                <div class="slots__grid" id="slots"></div>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="wiz__step" data-step="3">
+            <legend>연락받을 정보를 남겨주세요</legend>
+            <div class="chips" id="projChips">
+              <span class="chips__k mono">관심 분야 (선택)</span>
+              <label class="chip"><input type="checkbox" name="interest" value="Brand Film" /><span>Brand Film</span></label>
+              <label class="chip"><input type="checkbox" name="interest" value="Social Motion Kit" /><span>Social Kit</span></label>
+              <label class="chip"><input type="checkbox" name="interest" value="Full Motion Identity" /><span>Motion Identity</span></label>
+              <label class="chip"><input type="checkbox" name="interest" value="Kinetic Typography" /><span>Kinetic Type</span></label>
+              <label class="chip"><input type="checkbox" name="interest" value="3D / CG" /><span>3D / CG</span></label>
+              <label class="chip"><input type="checkbox" name="interest" value="UI Motion" /><span>UI Motion</span></label>
+            </div>
+            <div class="fields">
+              <label class="field"><input name="name" required autocomplete="name" placeholder=" " /><span>이름 *</span></label>
+              <label class="field"><input name="email" type="email" required autocomplete="email" placeholder=" " /><span>이메일 *</span></label>
+              <label class="field"><input name="phone" type="tel" autocomplete="tel" placeholder=" " /><span>연락처</span></label>
+              <label class="field"><input name="message" autocomplete="off" placeholder=" " /><span>한 줄 메모</span></label>
+            </div>
+            <label class="agree"><input type="checkbox" name="agree" required /><span>상담을 위한 개인정보 수집·이용에 동의합니다. (필수)</span></label>
+          </fieldset>
+        </div>
+
+        <div class="wiz__foot">
+          <button type="button" class="wiz__back" id="wizBack" hidden>← 이전</button>
+          <p class="wiz__sum" id="wizSum"></p>
+          <button type="button" class="btn btn--gold btn--sm" id="wizNext" data-magnetic><span>다음</span><i class="arr">→</i></button>
+          <button type="submit" class="btn btn--gold btn--sm" id="submitBtn" data-magnetic hidden><span>예약하기</span><i class="arr">→</i></button>
+        </div>
+        <p class="form-error" id="formError" role="alert"></p>
+        <p class="wiz__note">✓ 첫 상담 무료 &nbsp; ✓ 24시간 내 회신 &nbsp; ✓ 부담 없는 견적</p>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div>
+        <p class="mono">Say hello</p>
+        <a class="footer__mail" href="mailto:hello@gukhwa.studio" data-magnetic>hello@gukhwa.studio</a>
+      </div>
+      <div class="footer__cols">
+        <div><p class="mono">Social</p><a href="#" class="roll"><span class="roll__t" data-text="Instagram">Instagram</span></a><a href="#" class="roll"><span class="roll__t" data-text="Vimeo">Vimeo</span></a><a href="#" class="roll"><span class="roll__t" data-text="Behance">Behance</span></a></div>
+        <div><p class="mono">Studio</p><span>Sweet99 1F</span><span>고양시 일산서구</span><span>하이파크1로91번길 8-11</span></div>
+      </div>
+    </div>
+    <div class="footer__brand" id="footBrand" aria-label="Gukhwa">Gukhwa</div>
+    <div class="footer__bot mono">
+      <span>© 2026 Gukhwa Studio</span>
+      <span>Motion that blooms.</span>
+      <a href="#top" data-magnetic>Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="프로젝트 영상" hidden>
+    <div class="lightbox__bg" data-close></div>
+    <div class="lightbox__panel">
+      <video id="lbVideo" controls playsinline></video>
+      <div class="lightbox__meta">
+        <div>
+          <p class="mono" id="lbCat"></p>
+          <h3 id="lbTitle"></h3>
+          <p id="lbDesc"></p>
+        </div>
+        <a href="#book" class="btn btn--ink" data-magnetic id="lbCta"><span>이런 영상 상담하기</span><i class="arr">→</i></a>
+      </div>
+      <button class="lightbox__close" data-close data-magnetic aria-label="닫기">✕</button>
+    </div>
+  </div>
+
+  <!-- ============ SUCCESS ============ -->
+  <div class="success" id="success" role="dialog" aria-modal="true" aria-label="예약 완료" hidden>
+    <div class="success__card">
+      <svg class="success__bloom" viewBox="0 0 200 200" aria-hidden="true"><g class="petals"></g><circle cx="100" cy="100" r="10" fill="#0E0E0E" /></svg>
+      <p class="mono">Booking requested — <span id="okCode"></span></p>
+      <h3>예약 요청이 접수되었습니다.</h3>
+      <p id="okText"></p>
+      <div class="success__btns">
+        <button class="btn btn--line" id="okIcs" data-magnetic><span>캘린더에 추가 (.ics)</span></button>
+        <a class="btn btn--line" id="okMail" data-magnetic><span>이메일로도 보내기</span></a>
+        <button class="btn btn--ink" id="okClose" data-magnetic><span>확인</span></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="assets/main.js"></script>
+</body>
+</html>
